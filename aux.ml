@@ -47,6 +47,8 @@ let callAbella command =
         lines := input_line in_channel :: !lines
       done;
     with End_of_file ->
+      ignore (Unix.close_process_in in_channel) | 
+         _ ->
       ignore (Unix.close_process_in in_channel)
   end;
   List.rev !lines
