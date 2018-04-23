@@ -264,8 +264,8 @@ let testOne tlName =
     close_out mycalculus_mod;
     close_out mycalculus_thm;
 	runPreservationTests tlName ldl subtyping; 
-	Sys.remove ("./repo/" ^ tlName ^ ".mod"); 
-	Sys.remove ("./repo/" ^ tlName ^ ".sig"); 
+	;Sys.remove ("./repo/" ^ tlName ^ ".mod"); 
+	;Sys.remove ("./repo/" ^ tlName ^ ".sig"); 
 	let directory = getcwd () in 
 		chdir "generated";
 		Unix.open_process_in ("abella " ^ (tlName ^ ".thm"));
